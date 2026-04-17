@@ -1,0 +1,87 @@
+\documentclass{article}
+
+\usepackage[paperwidth=1080pt,paperheight=1350pt,margin=0pt]{geometry}
+\usepackage{graphicx}
+\usepackage{eso-pic}
+\usepackage{fontspec}
+\usepackage{xcolor}
+
+% ----------------------------
+% files
+% ----------------------------
+\newcommand{\bgimage}{../Assets/Fotos/backgroundfoto1.jpg}
+\newcommand{\bmllogo}{../Assets/Logos/logo_viena_transparente.png}
+
+% ----------------------------
+% fonts from project folder
+% ----------------------------
+\newfontfamily\Mainfont{../Assets/Fonts/Great_Vibes/GreatVibes-Regular.ttf}
+\newfontfamily\Secondfont{../Assets/Fonts/Noto_Serif_Devanagari/NotoSerifDevanagari-VariableFont_wdth,wght.ttf}
+\newfontfamily\Thirdfont{../Assets/Fonts/Oswald/Oswald-VariableFont_wght.ttf}
+
+% ----------------------------
+% colors
+% ----------------------------
+\definecolor{mainwhite}{HTML}{F7F3EF}
+\definecolor{softwhite}{HTML}{EEE7DE}
+\definecolor{darklogo}{HTML}{3E2A1F}
+
+% ----------------------------
+% background and logo
+% ----------------------------
+\newcommand\BackgroundPic{%
+    \put(0,0){%
+        \includegraphics[width=\paperwidth,height=\paperheight]{\bgimage}%
+    }%
+}
+
+\newcommand\LogoTopRight{%
+    \put(820,1160){%
+        \includegraphics[width=180pt]{\bmllogo}%
+    }%
+}
+
+\begin{document}
+\thispagestyle{empty}
+
+\AddToShipoutPictureBG*{\BackgroundPic}
+\AddToShipoutPictureFG*{\LogoTopRight}
+
+% top title
+\begin{picture}(0,0)
+    \put(380,1180){%
+        {\Secondfont\fontsize{52}{58}\selectfont\color{mainwhite}Grupo de}%
+    }
+
+    \put(290,980){%
+        {\Mainfont\fontsize{150}{150}\selectfont\color{mainwhite}Oración}%
+    }
+
+    \put(390,840){%
+        {\Thirdfont\fontsize{62}{68}\selectfont\color{mainwhite}VIERNES 19:30}%
+    }
+
+    % quote
+    \put(260,355){%
+        {\Secondfont\fontsize{66}{72}\selectfont\color{softwhite}Orad sin cesar}%
+    }
+
+    \put(405,280){%
+        {\Thirdfont\fontsize{28}{34}\selectfont\color{mainwhite}1 Tesalonicenses 5:17}%
+    }
+
+    % bottom left info
+    \put(25,95){%
+        {\Thirdfont\fontsize{26}{30}\selectfont\color{mainwhite}SERVITENGASSE 9}%
+    }
+
+    \put(55,55){%
+        {\Thirdfont\fontsize{26}{30}\selectfont\color{mainwhite}1090 WIEN}%
+    }
+
+    \put(20,15){%
+        {\Thirdfont\fontsize{26}{30}\selectfont\color{mainwhite}+43 650 9202268}%
+    }
+\end{picture}
+
+\end{document}

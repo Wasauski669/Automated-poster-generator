@@ -1,40 +1,66 @@
 \documentclass{article}
 
-% Packages
-\usepackage[utf8]{inputenc}
-\usepackage[spanish]{babel}
-\usepackage{amsmath} % for math
-\usepackage{graphicx} % for images
+\usepackage[margin=0cm]{geometry}
+\usepackage{graphicx}
+\usepackage{eso-pic}
+\usepackage{fontspec}
+\usepackage{xcolor}
 
-% Title info
-\title{Mi Primer Documento en \LaTeX}
-\author{Tu Nombre}
-\date{\today}
+% variables
+\newcommand{\bgimage}{../Assets/Fotos/backgroundfoto1.jpg}
+\newcommand{\bmllogo}{../Assets/Logos/logo_viena_transparente.png}
+
+% fonts
+\newfontfamily\Mainfont[
+    Path = ../Assets/Fonts/Great_Vibes/,
+    Extension = .ttf,
+    UprightFont = GreatVibes-Regular
+]{}
+
+\newfontfamily\Secondfont[
+    Path = ../Assets/Fonts/Noto_Serif_Devanagari/,
+    Extension = .ttf,
+    UprightFont = NotoSerifDevanagari-VariableFont_wdth,wght
+]{}
+
+\newfontfamily\Thirdfont[
+    Path = ../Assets/Fonts/Oswald/,
+    Extension = .ttf,
+    UprightFont = Oswald-VariableFont_wght
+]{}
+
+% colors
+\definecolor{maincolor}{HTML}{000000}
+\definecolor{secondarycolor}{HTML}{D9D1D0}
+\definecolor{tertiarycolor}{HTML}{828181}
+
+% background
+\newcommand\BackgroundPic{%
+    \put(0,0){%
+        \parbox[b][\paperheight]{\paperwidth}{%
+            \includegraphics[width=\paperwidth,height=\paperheight]{\bgimage}%
+        }%
+    }%
+}
+
+% logo
+\newcommand\LogoTopRight{%
+    \put(470,720){%
+        \includegraphics[width=2.5cm]{\bmllogo}%
+    }%
+}
 
 \begin{document}
+\thispagestyle{empty}
 
-\maketitle
+\AddToShipoutPictureBG*{\BackgroundPic}
+\AddToShipoutPictureFG*{\LogoTopRight}
 
-\section{Introducción}
-Este es un documento básico en \LaTeX. Aquí puedes escribir texto normal.
+\vspace*{5cm}
 
-\section{Ejemplo de matemáticas}
-Una ecuación:
-\[
-E = mc^2
-\]
-
-\section{Lista}
-\begin{itemize}
-    \item Primer elemento
-    \item Segundo elemento
-\end{itemize}
-
-\section{Imagen}
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=0.5\textwidth]{example-image}
-    \caption{Ejemplo de imagen}
-\end{figure}
+\begin{center}
+    normal text
+    {\Mainfont\ oracion test test}
+\end{center}
 
 \end{document}
