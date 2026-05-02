@@ -1,0 +1,76 @@
+\documentclass{article}
+
+\usepackage[paperwidth=79cm, paperheight=100cm, margin=2cm]{geometry}
+\usepackage[export]{adjustbox}
+\usepackage{fontspec}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{graphics}
+
+
+% Background Images
+\newcommand{\bgimage}{ /home/mike/Desktop/Programmieren/python/Automated-poster-generator/Assets/Fotos/backgroundfoto15.jpg }
+
+% Logos
+\newcommand{\blmlogobrown}{../Assets/Logos/BLM_brown.png}
+\newcommand{\blmlogowhite}{../Assets/Logos/BLM_white.png}
+\newcommand{\church}{../Assets/Logos/church.png}
+\newcommand{\whatsapp}{../Assets/Logos/whatsapp.png}
+
+
+% Fonts
+\setmainfont[
+    Path =../Assets/Fonts/Great_Vibes/,
+    Extension =.ttf,
+    UprightFont = GreatVibes_Regular
+]{GreatVibes}
+
+\newfontfamily\GelasioFont[
+    Path =../Assets/Fonts/Gelasio/,
+    Extension =.ttf,
+    UprightFont = Gelasio-Italic-VariableFont_wght
+]{Gelasio}
+
+\newfontfamily\OswaldFont[
+    Path =../Assets/Fonts/Oswald/,
+    Extension =.ttf,
+    UprightFont = Oswald-VariableFont_wght
+]{Oswald}
+
+
+
+
+\pagestyle{empty}
+
+\begin{document}
+
+% Background Image
+\begin{tikzpicture}[remember picture, overlay]
+    \node[inner sep=0pt] at (current page.center) {\includegraphics{\bgimage}};
+\end{tikzpicture}
+
+% BLM Logo and contact Info
+\begin{tikzpicture}[remember picture, overlay]
+    \node[anchor= north east, inner sep=2cm] at (current page.north east) {\includegraphics[height=15cm, width=15cm]{\blmlogobrown}};
+    \node[anchor= south west, inner sep=2cm, xshift=4cm, yshift=4cm] at (current page.south west) {\includegraphics[height=5cm, width=5cm]{\church}};
+    \node[anchor= south west, inner sep=2cm, xshift=4cm, yshift=11cm] at (current page.south west) {\includegraphics[height=5cm, width=5cm]{\whatsapp}};
+    \node[anchor= south west, inner sep=2cm, xshift=10cm, yshift=5cm] at (current page.south west){\GelasioFont\fontsize{50pt}{70pt}\selectfont Servitengasse 9 1090 Wien};
+    \node[anchor= south west, inner sep=2cm, xshift=10cm, yshift=12.5cm] at (current page.south west){\GelasioFont\fontsize{50pt}{70pt}\selectfont +43 650 9202268};
+
+\end{tikzpicture}
+
+
+% Text
+\begin{tikzpicture}[remember picture, overlay]
+
+    \node[anchor= north, inner sep=2cm] at (current page.north){\GelasioFont\fontsize{200pt}{220pt}\selectfont Grupo de};
+    \node[anchor= north, inner sep=2cm, yshift=-200pt] at (current page.north){\fontsize{400pt}{420pt}\selectfont Oracion};
+    \node[anchor= north, inner sep=2cm, yshift=-600pt] at (current page.north){\OswaldFont\fontsize{130pt}{150pt}\selectfont Viernes 19:30h};
+    \node[anchor= north, inner sep=2cm, yshift=-1200pt] at (current page.north){\GelasioFont\fontsize{150pt}{170pt}\selectfont En todo, mediante oración y súplica con acción de gracias, presentad vuestras peticiones a Dios. };
+    \node[anchor= north, inner sep=2cm, yshift=-1400pt] at (current page.north){\GelasioFont\fontsize{100pt}{120pt}\selectfont Filipenses 4:6 };
+
+\end{tikzpicture}
+
+
+
+\end{document}
