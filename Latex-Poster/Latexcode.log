@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023/Debian) (preloaded format=xelatex 2026.4.16)  1 MAY 2026 02:35
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023/Debian) (preloaded format=xelatex 2026.4.16)  7 MAY 2026 22:46
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -368,7 +368,8 @@ Package fontspec Info: Font family 'Oswald(0)' created for font 'Oswald' with
 (fontspec)             <->"[../Assets/Fonts/Oswald/Oswald-VariableFont_wght.ttf]/OT:script=latn;language=dflt;"
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
 
- (./Latexcode.aux)
+
+No file Latexcode.aux.
 \openout1 = `Latexcode.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 45.
@@ -381,7 +382,7 @@ LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 45.
 LaTeX Font Info:    ... okay on input line 45.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 45.
 LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 45.
- (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
+(/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2023/04/13 v2.5m Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 45.
@@ -483,8 +484,20 @@ LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
 (Font)                  OT1/cmss/bx/n --> TU/lmss/b/n on input line 45.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 (Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 45.
-File: ../Assets/Fotos/backgroundfoto1.jpg Graphic file (type bmp)
-<../Assets/Fotos/backgroundfoto1.jpg>
+
+./Latexcode.tex:49: LaTeX Error: File ` {{bgimage}} ' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.49 ...t page.center) {\includegraphics{\bgimage}
+                                                  };
+I could not locate the file with any of these extensions:
+.pdf,.PDF,.ai,.AI,.png,.PNG,.jpg,.JPG,.jpeg,.JPEG,.jp2,.JP2,.jpf,.JPF,.bmp,.BMP,.ps,.PS,.eps,.EPS,.mps,.MPS
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
 File: ../Assets/Logos/BLM_brown.png Graphic file (type bmp)
 <../Assets/Logos/BLM_brown.png>
 File: ../Assets/Logos/church.png Graphic file (type bmp)
@@ -498,12 +511,16 @@ File: ../Assets/Logos/whatsapp.png Graphic file (type bmp)
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
  ***********
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
  ) 
 Here is how much of TeX's memory you used:
- 15586 strings out of 474878
- 361023 string characters out of 5762516
+ 15620 strings out of 474878
+ 361595 string characters out of 5762516
  1919627 words of memory out of 5000000
- 37381 multiletter control sequences out of 15000+600000
+ 37420 multiletter control sequences out of 15000+600000
  558229 words of font info for 56 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  86i,5n,93p,416b,613s stack positions out of 10000i,1000n,20000p,200000b,200000s

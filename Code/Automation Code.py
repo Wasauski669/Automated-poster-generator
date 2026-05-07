@@ -12,7 +12,6 @@ OUTPUT_DIR = BASE_DIR/"output"
 PHOTOS_DIR = BASE_DIR/"Assets"/"Fotos"
 QUOTES_FILE = BASE_DIR/"Assets"/"Quotes"/"quotes_with_spanish.csv"
 COUNTER_FILE = BASE_DIR/"Code"/"counter.csv"
-
 OUTPUT_DIR.mkdir(exist_ok=True)
 
 def latex_escape(text: str) -> str:
@@ -174,6 +173,9 @@ def compile_tex(tex_file: Path):
         cwd=tex_file.parent,
         check=True,
     )
+
+def chose_color():
+    pass
 
 def main():
     env = Environment(loader=FileSystemLoader(TEMPLATE_DIR), autoescape=False)
