@@ -1,5 +1,6 @@
 import subprocess
 from PIL import Image
+import numpy as np
 from jinja2 import Environment, FileSystemLoader
 import csv
 from pathlib import Path
@@ -133,6 +134,7 @@ def load_quotes_es():
 
     return reference_es, quote_es
 
+
 def load_background():
     with open(COUNTER_FILE, "r", newline="") as counter_file:
         counter_reader = csv.DictReader(counter_file)
@@ -164,24 +166,116 @@ def load_background():
 
 
 def compile_tex(tex_file: Path):
-    subprocess.run(
+    result = subprocess.run(
         [
             "xelatex",
             "-interaction=nonstopmode",
+            "-halt-on-error",
             tex_file.name,
         ],
         cwd=tex_file.parent,
-        check=True,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+        text=True,
     )
 
+    if result.returncode != 0:
+        print("LaTeX compilation failed:")
+        print(result.stdout)
+        print(result.stderr)
+        raise RuntimeError("xelatex failed")
+
+
+def detect_color():
+    bg = load_background()
+    img = Image.open(bg).convert("RGB")
+    width, height = img.size
+
+    regions = {
+        "Grupo de":        (0.15, 0.00, 0.85, 0.18),
+        "Oracion":         (0.05, 0.10, 0.95, 0.38),
+        "Viernes 19:30h":  (0.20, 0.31, 0.80, 0.45),
+        "Quote":           (0.10, 0.78, 0.90, 0.95),
+        "Reference":       (0.25, 0.89, 0.75, 1.00),
+    }
+    boxes = {
+        "Grupo de": (regions["Grupo de"][0] * width, 
+                     regions["Grupo de"][1] * height, 
+                     regions["Grupo de"][2] * width, 
+                     regions["Grupo de"][3] * height),
+        "Oracion": (regions["Oracion"][0] * width,
+                     regions["Oracion"][1] * height,
+                     regions["Oracion"][2] * width,
+                     regions["Oracion"][3] * height),
+        "Viernes 19:30": (regions["Viernes 19:30h"][0] * width,
+                          regions["Viernes 19:30h"][1] * height,
+                          regions["Viernes 19:30h"][2] * width,
+                          regions["Viernes 19:30h"][3] * height),
+        "Quote": (regions["Quote"][0] * width,
+                  regions["Quote"][1] * height,
+                  regions["Quote"][2] * width,
+                  regions["Quote"][3] * height),
+        "Reference": (regions["Reference"][0] * width,
+                      regions["Reference"][1] * height,
+                      regions["Reference"][2] * width,
+                      regions["Reference"][3] * height)
+    }
+    
+    
+    Grupo_de = boxes["Grupo de"]
+    Oracion = boxes["Oracion"]
+    Viernes = boxes["Viernes 19:30"]
+    Quote = boxes["Quote"]
+    Reference = boxes["Reference"]
+
+    crop_grupo_de= img.crop(Grupo_de)
+    crop_Oracion = img.crop(Oracion)
+    crop_Viernes = img.crop(Viernes)
+    crop_Quote = img.crop(Quote)
+    crop_Reference = img.crop(Reference)
+
+    arr1 = np.array(crop_grupo_de).astype(float)
+    arr2 = np.array(crop_Oracion).astype(float)
+    arr3 = np.array(crop_Viernes).astype(float)
+    arr4 = np.array(crop_Quote).astype(float)
+    arr5 = np.array(crop_Reference).astype(float)
+
+    BRIGHTNESS = [(0.2126 * arr1[:,:,0]+ 0.7152 * arr1[:,:,1] + 0.0722 * arr1[:,:,2]),
+                  (0.2126 * arr2[:,:,0]+ 0.7152 * arr2[:,:,1] + 0.0722 * arr2[:,:,2]),
+                  (0.2126 * arr3[:,:,0]+ 0.7152 * arr3[:,:,1] + 0.0722 * arr3[:,:,2]),
+                  (0.2126 * arr4[:,:,0]+ 0.7152 * arr4[:,:,1] + 0.0722 * arr4[:,:,2]),
+                  (0.2126 * arr5[:,:,0]+ 0.7152 * arr5[:,:,1] + 0.0722 * arr5[:,:,2])
+    ]
+    avg_brightness = []
+    for i in range(len(BRIGHTNESS)):
+        avg_brightness.append(BRIGHTNESS[i].mean())
+
+    print("COLOR BRIGHTNESS: ", avg_brightness)
+    return avg_brightness
+
+
 def chose_color():
-    pass
+    BRIGHTNESS = detect_color()
+
+    colors = []
+
+    for i in range(len(BRIGHTNESS)):
+        if BRIGHTNESS[i] < 120:
+            colors.append("cream")
+        elif BRIGHTNESS[i] < 160:
+            colors.append("black")
+        else:
+            colors.append("darkbrown")
+    
+    return colors
+
 
 def main():
     env = Environment(loader=FileSystemLoader(TEMPLATE_DIR), autoescape=False)
 
     template = env.get_template("Latexcode.tex")
     references_es, quotes_es = load_quotes_es()
+    letter_color = chose_color()
     background = load_background()
     print(references_es,quotes_es)
 
@@ -193,13 +287,20 @@ def main():
     
     render_tex = template.render(bgimage = latex_path(background),
                                  Quote = quotes_es,
-                                 Reference = references_es)
+                                 Reference = references_es,
+                                 Color = letter_color[0],
+                                 Grupo_de = letter_color[0],
+                                 Oracion = letter_color[1],
+                                 Viernes = letter_color[2],
+                                 QUOTE = letter_color[3],
+                                 REFERENCE = letter_color[4])
     
     tex_file = OUTPUT_DIR /"Poster-output.tex"
     tex_file.write_text(render_tex, encoding="utf-8")
-    print(render_tex[:1000])
     compile_tex(tex_file)
+    print("COLOR: ", letter_color)
     print("generated poster successfully.")
+
 
 if __name__ == "__main__":
     main()

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023/Debian) (preloaded format=xelatex 2026.4.16)  7 MAY 2026 23:02
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023/Debian) (preloaded format=xelatex 2026.4.16)  12 MAY 2026 22:31
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -504,6 +504,222 @@ File: ../Assets/Logos/church.png Graphic file (type bmp)
 <../Assets/Logos/church.png>
 File: ../Assets/Logos/whatsapp.png Graphic file (type bmp)
 <../Assets/Logos/whatsapp.png>
+
+./Latexcode.tex:61: Package xcolor Error: Undefined color `Color'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ...t={{Color}}] at (current page.south west){
+                                                  \OswaldFont\fontsize{60pt}...
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./Latexcode.tex:61: Package xcolor Error: Undefined color `Color'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ...t={{Color}}] at (current page.south west){
+                                                  \OswaldFont\fontsize{60pt}...
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./Latexcode.tex:61: Package xcolor Error: Undefined color `Color'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ...pt}\selectfont Servitengasse 9 1090 Wien};
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./Latexcode.tex:62: Package xcolor Error: Undefined color `Color'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.62 ...t={{Color}}] at (current page.south west){
+                                                  \OswaldFont\fontsize{60pt}...
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./Latexcode.tex:62: Package xcolor Error: Undefined color `Color'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.62 ...t={{Color}}] at (current page.south west){
+                                                  \OswaldFont\fontsize{60pt}...
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./Latexcode.tex:62: Package xcolor Error: Undefined color `Color'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.62 ...e{60pt}{70pt}\selectfont +43 650 9202268};
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./Latexcode.tex:70: Package xcolor Error: Undefined color `Grupo_de'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.70 ...ext={{Grupo_de}}] at (current page.north){
+                                                  \GelasioFont\fontsize{200p...
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./Latexcode.tex:70: Package xcolor Error: Undefined color `Grupo_de'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.70 ...ext={{Grupo_de}}] at (current page.north){
+                                                  \GelasioFont\fontsize{200p...
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./Latexcode.tex:70: Package xcolor Error: Undefined color `Grupo_de'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.70 ...ntsize{200pt}{220pt}\selectfont Grupo de};
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./Latexcode.tex:71: Package xcolor Error: Undefined color `Oracion'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.71 ...text={{Oracion}}] at (current page.north){
+                                                  \fontsize{400pt}{420pt}\se...
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./Latexcode.tex:71: Package xcolor Error: Undefined color `Oracion'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.71 ...text={{Oracion}}] at (current page.north){
+                                                  \fontsize{400pt}{420pt}\se...
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./Latexcode.tex:71: Package xcolor Error: Undefined color `Oracion'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.71 ...ontsize{400pt}{420pt}\selectfont Oracion};
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./Latexcode.tex:72: Package xcolor Error: Undefined color `Viernes'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.72 ...text={{Viernes}}] at (current page.north){
+                                                  \OswaldFont\fontsize{130pt...
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./Latexcode.tex:72: Package xcolor Error: Undefined color `Viernes'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.72 ...text={{Viernes}}] at (current page.north){
+                                                  \OswaldFont\fontsize{130pt...
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./Latexcode.tex:72: Package xcolor Error: Undefined color `Viernes'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.72 ...{130pt}{150pt}\selectfont Viernes 19:30h};
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./Latexcode.tex:73: Package xcolor Error: Undefined color `QUOTE'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.73 ...t badly centered] at (current page.north){
+                                                  \GelasioFont\fontsize{100p...
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./Latexcode.tex:73: Package xcolor Error: Undefined color `QUOTE'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.73 ...t badly centered] at (current page.north){
+                                                  \GelasioFont\fontsize{100p...
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./Latexcode.tex:73: Package xcolor Error: Undefined color `QUOTE'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.73 ...e{80pt}{120pt}\selectfont {{Reference}} };
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
 [1
 
 ] (./Latexcode.aux)
@@ -517,10 +733,10 @@ LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
- 15622 strings out of 474878
- 361623 string characters out of 5762516
+ 15632 strings out of 474878
+ 361752 string characters out of 5762516
  1919627 words of memory out of 5000000
- 37422 multiletter control sequences out of 15000+600000
+ 37432 multiletter control sequences out of 15000+600000
  558229 words of font info for 56 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  86i,5n,93p,416b,613s stack positions out of 10000i,1000n,20000p,200000b,200000s
