@@ -258,16 +258,20 @@ def chose_color():
     BRIGHTNESS = detect_color()
 
     colors = []
+    shadows = []
 
     for i in range(len(BRIGHTNESS)):
         if BRIGHTNESS[i] < 120:
             colors.append("cream")
+            shadows.append("shadowforcream")
         elif BRIGHTNESS[i] < 160:
             colors.append("black")
+            shadows.append("shadowforblack")
         else:
             colors.append("darkbrown")
+            shadows.append("shadowforbrown")
     
-    return colors
+    return colors, shadows
 
 
 def main():
@@ -288,12 +292,18 @@ def main():
     render_tex = template.render(bgimage = latex_path(background),
                                  Quote = quotes_es,
                                  Reference = references_es,
-                                 Color = letter_color[0],
-                                 Grupo_de = letter_color[0],
-                                 Oracion = letter_color[1],
-                                 Viernes = letter_color[2],
-                                 QUOTE = letter_color[3],
-                                 REFERENCE = letter_color[4])
+                                 Color = letter_color[0][0],
+                                 Grupo_de = letter_color[0][0],
+                                 Oracion = letter_color[0][1],
+                                 Viernes = letter_color[0][2],
+                                 QUOTE = letter_color[0][3],
+                                 REFERENCE = letter_color[0][4],
+                                 SColor = letter_color[1][0],
+                                 SGrupo_de = letter_color[1][0],
+                                 SOracion = letter_color[1][1],
+                                 SViernes = letter_color[1][2],
+                                 SQUOTE = letter_color[1][3],
+                                 SREFERENCE = letter_color[1][4])
     
     tex_file = OUTPUT_DIR /"Poster-output.tex"
     tex_file.write_text(render_tex, encoding="utf-8")

@@ -43,6 +43,11 @@
 \definecolor{cream}{HTML}{F8EFD4}
 \definecolor{darkbrown}{HTML}{2A160B}
 
+%OUTLINES
+\definecolor{shadowforblack}{HTML}{F8EFD4}
+\definecolor{shadowforcream}{HTML}{2A160B}
+\definecolor{shadowforbrown}{HTML}{F8EFD4}
+
 
 \pagestyle{empty}
 
@@ -61,11 +66,23 @@
     \node[anchor= south west, inner sep=2cm, xshift=10cm, yshift=5cm, text={{Color}}] at (current page.south west){\OswaldFont\fontsize{60pt}{70pt}\selectfont Servitengasse 9 1090 Wien};
     \node[anchor= south west, inner sep=2cm, xshift=10cm, yshift=12.5cm, text={{Color}}] at (current page.south west){\OswaldFont\fontsize{60pt}{70pt}\selectfont +43 650 9202268};
 
+    %SHADOWS FOR CONTACT INFO
+    \node[anchor= south west, inner sep=2cm, xshift=9.8cm, yshift=5cm, text={{SColor}}] at (current page.south west){\OswaldFont\fontsize{60pt}{70pt}\selectfont Servitengasse 9 1090 Wien};
+    \node[anchor= south west, inner sep=2cm, xshift=9.8cm, yshift=12.5cm, text={{SColor}}] at (current page.south west){\OswaldFont\fontsize{60pt}{70pt}\selectfont +43 650 9202268};
+
 \end{tikzpicture}
 
 
 % Text
 \begin{tikzpicture}[remember picture, overlay]
+
+    %SHADOWS
+    \node[anchor= north, inner sep=2cm, xshift=6pt, text={{SGrupo_de}}] at (current page.north){\GelasioFont\fontsize{200pt}{220pt}\selectfont Grupo de};
+    \node[anchor= north, inner sep=2cm, xshift=6pt, yshift=-200pt, text={{SOracion}}] at (current page.north){\fontsize{400pt}{420pt}\selectfont Oracion};
+    \node[anchor= north, inner sep=2cm, xshift=6pt, yshift=-600pt, text={{SViernes}}] at (current page.north){\OswaldFont\fontsize{130pt}{150pt}\selectfont Viernes 19:30h};
+    \node[anchor= north, inner sep=2cm, xshift=6pt, yshift=-1500pt, text={{SQUOTE}}, text width=0.9\paperwidth, align=center, text badly centered] at (current page.north){\GelasioFont\fontsize{100pt}{170pt}\selectfont {{Quote}} \par\vspace{2cm} \fontsize{80pt}{120pt}\selectfont {{Reference}} };
+
+
 
     \node[anchor= north, inner sep=2cm, text={{Grupo_de}}] at (current page.north){\GelasioFont\fontsize{200pt}{220pt}\selectfont Grupo de};
     \node[anchor= north, inner sep=2cm, yshift=-200pt, text={{Oracion}}] at (current page.north){\fontsize{400pt}{420pt}\selectfont Oracion};
