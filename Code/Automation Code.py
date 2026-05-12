@@ -4,6 +4,7 @@ import numpy as np
 from jinja2 import Environment, FileSystemLoader
 import csv
 from pathlib import Path
+import time 
 
 
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -135,7 +136,7 @@ def load_quotes_es():
     return reference_es, quote_es
 
 
-def load_background():
+def load_background(update_counter=False):
     with open(COUNTER_FILE, "r", newline="") as counter_file:
         counter_reader = csv.DictReader(counter_file)
         counter_rows = list(counter_reader)
@@ -152,15 +153,16 @@ def load_background():
         print("File does not exist: ", select_foto)
         return None
     
-    with open(COUNTER_FILE, "a", newline="") as counter_file:
-        fieldnames = ["counter_quote", "counter_background", "counter_quote_es"]
-        writer = csv.DictWriter(counter_file, fieldnames=fieldnames)
+    if update_counter:
+        with open(COUNTER_FILE, "a", newline="") as counter_file:
+            fieldnames = ["counter_quote", "counter_background", "counter_quote_es"]
+            writer = csv.DictWriter(counter_file, fieldnames=fieldnames)
 
-        writer.writerow({
-            "counter_quote": c_quote,
-            "counter_background": c_background + 1,
-            "counter_quote_es": c_quote_es
-            })
+            writer.writerow({
+                "counter_quote": c_quote,
+                "counter_background": c_background + 1,
+                "counter_quote_es": c_quote_es
+                })
     
     return select_foto
 
@@ -187,7 +189,7 @@ def compile_tex(tex_file: Path):
 
 
 def detect_color():
-    bg = load_background()
+    bg = load_background(update_counter=False)
     img = Image.open(bg).convert("RGB")
     width, height = img.size
 
@@ -288,12 +290,13 @@ def pdf_to_png(pdf_path, png_path):
 
 
 def main():
+    start_time = time.time()
     env = Environment(loader=FileSystemLoader(TEMPLATE_DIR), autoescape=False)
 
     template = env.get_template("Latexcode.tex")
     references_es, quotes_es = load_quotes_es()
     letter_color = chose_color()
-    background = load_background()
+    background = load_background(update_counter=True)
     print(references_es,quotes_es)
 
     if not quotes_es:
@@ -326,6 +329,10 @@ def main():
     pdf_to_png(pdf_file, png_file)
     print("COLOR: ", letter_color)
     print("generated poster successfully.")
+    
+    end_time = time.time()
+    runtime = end_time - start_time
+    print(f"Runtime: {runtime:.2f} seconds")
 
 
 if __name__ == "__main__":
