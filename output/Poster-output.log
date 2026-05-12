@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023/Debian) (preloaded format=xelatex 2026.4.16)  12 MAY 2026 23:26
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023/Debian) (preloaded format=xelatex 2026.4.16)  12 MAY 2026 23:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -615,9 +615,9 @@ LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 (Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 54.
 File: /home/mike/Desktop/Programmieren/python/Automated-poster-generator/Assets
-/Fotos/backgroundfoto22.jpg Graphic file (type bmp)
+/Fotos/backgroundfoto28.jpg Graphic file (type bmp)
 </home/mike/Desktop/Programmieren/python/Automated-poster-generator/Assets/Foto
-s/backgroundfoto22.jpg>
+s/backgroundfoto28.jpg>
 File: ../Assets/Logos/BLM_brown.png Graphic file (type bmp)
 <../Assets/Logos/BLM_brown.png>
 File: ../Assets/Logos/church.png Graphic file (type bmp)
@@ -639,6 +639,6 @@ Here is how much of TeX's memory you used:
  37392 multiletter control sequences out of 15000+600000
  558229 words of font info for 56 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 86i,5n,93p,451b,613s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 86i,5n,93p,428b,613s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 Output written on Poster-output.pdf (1 page).

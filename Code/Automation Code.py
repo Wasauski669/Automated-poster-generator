@@ -274,6 +274,19 @@ def chose_color():
     return colors, shadows
 
 
+def pdf_to_png(pdf_path, png_path):
+    subprocess.run(
+        [
+            "convert",
+            "-density","300",
+            str(pdf_path),
+            "-quality","100",
+            str(png_path)
+        ],
+        check=True
+    )
+
+
 def main():
     env = Environment(loader=FileSystemLoader(TEMPLATE_DIR), autoescape=False)
 
@@ -307,7 +320,10 @@ def main():
     
     tex_file = OUTPUT_DIR /"Poster-output.tex"
     tex_file.write_text(render_tex, encoding="utf-8")
+    pdf_file = OUTPUT_DIR / "Poster-output.pdf"
+    png_file = OUTPUT_DIR / "Poster-output.png"
     compile_tex(tex_file)
+    pdf_to_png(pdf_file, png_file)
     print("COLOR: ", letter_color)
     print("generated poster successfully.")
 
